@@ -36,5 +36,5 @@ jobs:
 
           # use different PHP version in a test matrix
           - run: |
-            sed -i -e 's/^php_version:.*/php_version: ${{ inputs.php_version }}/g' .ddev/config.yaml \
+              bash -c "sed -i -e 's/^php_version:.*/php_version: ${{ inputs.php_version }}/g' .ddev/config.yaml" \
               && ddev start
