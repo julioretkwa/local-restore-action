@@ -33,7 +33,7 @@ jobs:
           - run: ddev composer install
 
           # example: fill database
-          - run: ddev mysql < data/db.sql
+          # - run: ddev mysql < data/db.sql
 
           # ... and so on. For example:
           - run: ddev exec bin/myAcceptanceTests.sh
