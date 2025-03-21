@@ -1,5 +1,15 @@
 name: Local Restore Action
 
+## If backup is not available, this workflow will fail and tag a ticket ❌.
+## If backup is available, this workflow will setup site and fetch DB backup 🔄.
+##  Possible errors:
+##   - Db fetch 20byte size
+##   - Db fetch string dump
+## If site setup fails, this workflow will fail and tag a ticket ❌.
+## If site setup is successful, this workflow will run automated test 🔄.
+## If test fails, this workflow will fail and tag a ticket ❌.
+## If test is successful, this workflow will tag a ticket ✅.
+
 on:
   workflow_dispatch:
     inputs:
