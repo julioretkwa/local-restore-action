@@ -34,7 +34,7 @@ jobs:
           - run: ddev start
 
           # example: fill database
-          - run: ddev import-db data/lr30Mar.sql
+          - run: ddev import-db -f data/lr30Mar.sql
 
           # ... and so on. For example:
           # - run: ddev exec bin/myAcceptanceTests.sh
