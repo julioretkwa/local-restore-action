@@ -31,20 +31,21 @@ jobs:
 
           # example: composer install
           - run: ddev composer install
+          - run: ddev start
 
           # example: fill database
           # - run: ddev mysql < data/db.sql
 
           # ... and so on. For example:
-          - run: ddev exec bin/myAcceptanceTests.sh
-          - run: ddev exec make tests
-          - run: ddev composer ci:tests
-          - run: ddev composer ci:tests:acceptance:${{ inputs.browser }}
-          - run: ddev yarn --frozen-lockfile --no-progress --non-interactive && ddev yarn mocha-tests
-          - run: ddev npm ci && ddev npm run mocha-tests
-          - run: test 'test for expected output' = "$(curl --silent https://my-ddev-project.ddev.site)"
+          # - run: ddev exec bin/myAcceptanceTests.sh
+          # - run: ddev exec make tests
+          # - run: ddev composer ci:tests
+          # - run: ddev composer ci:tests:acceptance:${{ inputs.browser }}
+          # - run: ddev yarn --frozen-lockfile --no-progress --non-interactive && ddev yarn mocha-tests
+          # - run: ddev npm ci && ddev npm run mocha-tests
+          # - run: test 'test for expected output' = "$(curl --silent https://my-ddev-project.ddev.site)"
 
           # use different PHP version in a test matrix
-          - run: |
-              bash -c "sed -i -e 's/^php_version:.*/php_version: ${{ inputs.php_version }}/g' .ddev/config.yaml" \
-              && ddev start
+          # - run: |
+          #     bash -c "sed -i -e 's/^php_version:.*/php_version: ${{ inputs.php_version }}/g' .ddev/config.yaml" \
+          #     && ddev start
